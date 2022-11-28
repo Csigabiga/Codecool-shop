@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Barlow', sans-serif;
+}
+
+.address-container {
+    display: flex;
+    margin-top: 2vh;
+}
+
+.checkout-btn {
+    margin: auto;
+}
+
+.checkout-form {
+    height: 100%;
+}
+
+.add-to-cart {
+    display: flex;
+    align-items: center;
+}
+
+.glyphicon {
+    margin-right:5px;
+}
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.thumbnail img
+{
+    margin-top: 10px;
+}
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+/*.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover, .navbar-brand-title:not(span):hover
+{
+    background: #428bca;
+}*/
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 20px;
+}
+
+#sidebar {
+    background-color: aliceblue;
+    margin-right: 10px;
+    padding: 20px;
+}
+
+#sidebar p {
+    font-weight: bold;
+}
+
+.content {
+    margin: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+hr {
+    border-top: 6px solid #428bca;
+    border-radius: 5px;
+}
+
+#customer-divider, #billing-address-divider, #shipping-address-divider {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#logo {
+    width: clamp(10px, 10vw, 70px);
+    height: clamp(10px, 10vh, 70px);
+    margin: auto 1.5vw;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 4em;
+    font-family: 'Staatliches', cursive;
+}
+
+.navbar {
+    background-color: #06233a;
+}
+
+.nav-link {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.5em;
+}
+
+a:hover {
+    color: white;
+}
+
+.modal-header {
+    font-family: 'Staatliches', cursive;
+}
+
+.modal-content {
+    font-family: 'Barlow', sans-serif;
+}
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    #sidebar {
+        padding: 15px;
+    }
+    #sidebar a {font-size: 18px;}
+}
+.quant-input{
+    width: 40px;
+}
+
+.fa-stack[data-count]:after{
+    position:absolute;
+    right:-60%;
+    top:-60%;
+    content: attr(data-count);
+    font-size: 12px;
+    padding:.6em;
+    border-radius:999px;
+    line-height:.50em;
+    color: #ffffff;
+    text-align:center;
+    min-width:0.1em;
+    font-weight:bold;
+    background: #508ef3;
+    border-style:solid;
+}
+.fa-circle {
+    color: #ffffff;
+}
+.card-img-left{
+    width: 20%;
+    height: auto;
+}
+
+.fa-trash::before{
+    color: red;
+}
+.clickable:hover{
+    cursor: pointer;
+}
+
+#navbar-cart-button {
+    padding: 0 10px 0;
+}
+
+#navbarSupportedContent {
+    display: flex;
+    justify-content: center;
+}

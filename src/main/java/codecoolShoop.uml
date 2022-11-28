@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="314.5" y="111.0">com.codecool.shop.controller.ProductController</node>
+    <node x="120.5" y="176.0">com.codecool.shop.model.BaseModel</node>
+    <node x="37.0" y="41.0">com.codecool.shop.model.Product</node>
+    <node x="73.0" y="375.0">com.codecool.shop.service.ProductService</node>
+    <node x="319.0" y="41.0">com.codecool.shop.dao.implementation.SupplierDaoMem</node>
+    <node x="116.0" y="311.0">com.codecool.shop.dao.ProductDao</node>
+    <node x="306.5" y="176.0">com.codecool.shop.config.TemplateEngineUtil</node>
+    <node x="281.0" y="375.0">com.codecool.shop.dao.implementation.ProductCategoryDaoMem</node>
+    <node x="95.0" y="246.5">com.codecool.shop.dao.implementation.ProductDaoMem</node>
+    <node x="132.0" y="-16.0">com.codecool.shop.model.Supplier</node>
+    <node x="302.0" y="441.0">com.codecool.shop.dao.ProductCategoryDao</node>
+    <node x="115.0" y="111.0">com.codecool.shop.dao.SupplierDao</node>
+    <node x="-136.0" y="111.0">com.codecool.shop.model.ProductCategory</node>
+    <node x="352.0" y="246.5">com.codecool.shop.config.Initializer</node>
+    <node x="319.0" y="311.0">com.codecool.shop.config.ThymeleafConfig</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.codecool.shop.model.Product" target="com.codecool.shop.model.BaseModel" relationship="GENERALIZATION">
+      <point x="6.5" y="15.5" />
+      <point x="102.5" y="191.5" />
+      <point x="-71.5" y="0.0" />
+    </edge>
+    <edge source="com.codecool.shop.model.ProductCategory" target="com.codecool.shop.model.BaseModel" relationship="GENERALIZATION">
+      <point x="0.0" y="15.5" />
+      <point x="-38.0" y="224.5" />
+      <point x="192.0" y="224.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="com.codecool.shop.model.Supplier" target="com.codecool.shop.model.BaseModel" relationship="GENERALIZATION">
+      <point x="60.0" y="0.0" />
+      <point x="570.5" y="-0.5" />
+      <point x="570.5" y="224.5" />
+      <point x="207.0" y="224.5" />
+      <point x="15.0" y="15.5" />
+    </edge>
+    <edge source="com.codecool.shop.dao.implementation.ProductCategoryDaoMem" target="com.codecool.shop.dao.ProductCategoryDao" relationship="REALIZATION">
+      <point x="0.0" y="15.5" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="com.codecool.shop.dao.implementation.SupplierDaoMem" target="com.codecool.shop.dao.SupplierDao" relationship="REALIZATION">
+      <point x="-98.0" y="0.0" />
+      <point x="192.0" y="56.5" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="com.codecool.shop.dao.implementation.ProductDaoMem" target="com.codecool.shop.dao.ProductDao" relationship="REALIZATION">
+      <point x="0.0" y="15.5" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="false" x="430.5" y="169.0" />
+  <SelectedNodes>
+    <node>com.codecool.shop.service.ProductService</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

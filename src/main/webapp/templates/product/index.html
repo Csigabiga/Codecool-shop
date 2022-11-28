@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-2"/>
+    <meta name="author" content="Codecool"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>Ship Shop</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Reem+Kufi+Ink&family=Staatliches&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap components -->
+    <!-- Latest compiled and minified Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!--Latest compiled and minified Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+    <script src="../../static/js/filter.js" defer></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- End of Bootstrap components -->
+
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css"/>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/e2ba0e82a0.js" crossorigin="anonymous" defer></script>
+    <!-- custom scripts -->
+    <script src="../../static/js/cart.js" defer></script>
+
+
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
+</head>
+
+<body>
+
+<div th:replace="navbar.html :: navbar"></div>
+
+<div class="d-flex content">
+    <div class="col col-sm-2" style="width: 500px" id="sidebar">
+        <p>Size</p>
+        <div class="row d-flex flex-column">
+            <div th:each="categoryItem,iterStat : ${category}">
+                <label class="container">
+                    <input type="checkbox" th:value="${categoryItem.getId()}" th:text=" ${categoryItem.getName()}" name="category">
+                </label>
+            </div>
+        </div>
+
+        <p>Supplier</p>
+        <div class="row d-flex flex-column">
+            <div th:each="supp,iterStat : ${suppliers}">
+                <label class="container">
+                    <input type="checkbox" th:value="${supp.getId()}" th:text="${supp.getName()} " name="supplier">
+                </label>
+            </div>
+        </div>
+
+<!--        <button type="submit" class="btn btn-primary">Search</button>-->
+    </div>
+
+    <div id="products" class="row">
+
+        <div class="col col-sm-12 col-md-6 col-lg-4" th:each="prod,iterStat : ${products}">
+            <div class="card">
+                <img class="" src="https://placehold.it/400x250/000/fff"
+                     th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt=""/>
+                <div class="card-header">
+                    <h4 class="card-title" th:text="${prod.name}">Product name</h4>
+                    <p class="card-text" th:text="${prod.description}">Product description... </p>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+                    </div>
+                    <div class="card-text ">
+                        <label th:for="'quant-input-' + ${prod.id}">Quantity:</label>
+                        <input class="quant-input" type="number"  name="quant-input" th:id="'quant-input-' + ${prod.id}" min="1" value="1">
+                    </div>
+                    <div class="card-text button-div">
+                        <button class="btn btn-primary add-to-cart-button" th:id="${prod.id}">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="cart-modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cart List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <b id="subtotal-number">Subtotal: 0$</b>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back to shopping</button>
+                <a class="btn btn-warning" href="/checkout">Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="footer.html :: copy"></div>
+
+</body>
+</html>
